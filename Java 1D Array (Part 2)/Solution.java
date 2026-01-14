@@ -1,39 +1,33 @@
+import java.io.*;
 import java.util.*;
 
 public class Solution {
-
-    private static boolean canWin(int leap, int[] game, boolean[] visited, int pos) {
-        if (pos >= game.length) return true;
-        if (pos < 0 || game[pos] != 0 || visited[pos]) return false;
-        
-        visited[pos] = true;
-        
-        return canWin(leap, game, visited, pos-1) || 
-            canWin(leap, game, visited, pos+1) ||
-            canWin(leap, game, visited, pos+leap);  
+    
+    public static boolean canWin(int leap,int[] arr,boolean[] position,int pos){
+      
+      if( pos >= arr.length ) return true;
+      
+      if(pos < 0 || arr[pos] != 0 ||  position[pos] )return false;
+      
+      position[pos]=true;
+      
+      return canWin(leap, arr, position, pos+1) || 
+             canWin(leap, arr, position, pos-1) ||
+             canWin(leap, arr, position, pos+leap);    
     }
-
-    public static boolean canWin(int leap, int[] game) {
-        return canWin(leap, game, new boolean[game.length], 0);
-    }
+    
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        
-        int q = scan.nextInt();
-        
-        while (q-- > 0) {
-            int n = scan.nextInt();
-            int leap = scan.nextInt();
-            
-            int[] game = new int[n];
-            
-            for (int i = 0; i < n; i++) {
-                game[i] = scan.nextInt();
-            }
-
-            System.out.println( (canWin(leap, game)) ? "YES" : "NO" );
+        Scanner scanner = new Scanner(System.in);
+        int count =scanner.nextInt();
+        for(int i=0 ;i < count ;i++){
+          int size= scanner.nextInt();
+          int leap=scanner.nextInt();
+          int[] arr=new int[size];
+          for(int j=0;j<size;j++){
+              arr[j]=scanner.nextInt();
+          }
+          System.out.println( (canWin(leap, arr,new boolean[size],0)) ? "YES" : "NO" );
         }
-        scan.close();
     }
 }
