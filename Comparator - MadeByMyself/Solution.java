@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.*;
-// Comparator 
+// Comparator
 public class Solution { 
       public static void main(String[] args){
           List<Integer> arr =  Arrays.asList(85,22, 23, 14, 95);          
