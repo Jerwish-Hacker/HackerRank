@@ -27,7 +27,7 @@ public class Solution {
           for(int j=0;j<size;j++){
               arr[j]=scanner.nextInt();
           }
-          System.out.println( (canWin(leap, arr,new boolean[size],0)) ? "YES" : "NO" );
+          System.out.println( (canWin(leap, arr,new boolean[size],0)) ? "YES" : "NO" );  
         }
     }
 }
