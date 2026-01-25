@@ -7,15 +7,23 @@ public class Solution {
         Scanner scanner = new Scanner(System.in);
         Stack<Character> stack = new Stack<>();
         while(scanner.hasNext()){
-            String s = scanner.nextLine();
+            String s = scanner.nextLine().trim();
             for(int i=0;i<s.length();i++){
                 char c = s.charAt(i);                
-                if(c == '{' || c == '}' || c == '[' || c == ']' || c == '(' || c == ')'){
-                    stack.push(c);            
+                if(stack.empty() && (c == '}' || c == ')' || c == ']') ){                    
+                    stack.add(c);
+                    break;
                 }
+                else if(c == '{' || c == '(' || c == '[' ){
+                    stack.push(c);
+                }                
+                else if( (c == '}' && stack.peek() == '{') || (c == ')' && stack.peek() == '(' ) || (c == ']' && stack.peek() == '[' )){
+                      stack.pop();                      
+                }               
             }
-            System.out.println(stack.toString());
+            System.out.println(stack.empty());
             stack.clear();
-        }        
+        } 
     }
 }
+
