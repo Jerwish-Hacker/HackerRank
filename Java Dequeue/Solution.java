@@ -4,6 +4,15 @@ import java.util.*;
 public class Solution {
 
     public static void main(String[] args) {
-        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scanner = new Scanner(System.in);
+        int length=scanner.nextInt();
+        int k=scanner.nextInt(); 
+        int maxUnique =0;
+        Deque deque = new ArrayDeque<>();
+        for(int i=0;i<k;i++){
+          int temp=scanner.nextInt();
+          deque.add(temp);
+        }
+        System.out.println(deque.toString());
     }
 }
