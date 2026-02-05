@@ -1,18 +1,23 @@
-import java.util.BitSet;
+import java.io.*;
+import java.util.*;
+
 
 public class Solution {
     public static void main(String[] args) {
-        BitSet bs = new BitSet();
-
-        bs.set(2);      // index 2 -> true
-        bs.set(3);      // index 5 -> true
-
-        System.out.println(bs.get(2)); // true
-        System.out.println(bs.get(3)); // false
-
-        //bs.clear(2);    // set back to false
-
-        System.out.println(bs);
+        
+        Scanner scanner = new Scanner(System.in);
+        int length = scanner.nextInt();        
+        BitSet bs = new BitSet(length);
+        int count = scanner.nextInt();
+        
+        scanner.nextLine();
+        
+       for(int i=0;i<count;i++){
+          String s=scanner.nextLine();
+          System.out.println(s);
+       }
+       
+       scanner.close();
     }
 }
 
