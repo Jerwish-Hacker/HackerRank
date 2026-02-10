@@ -13,21 +13,19 @@ public class Solution {
         
         for(int i=0;i<length;i++){
           int temp=scanner.nextInt();
-          deque.add(temp);
-        }
-        System.out.println(deque);
-        
-        for(int i=0;i<k;i++){
-          set.add(deque.removeFirst());          
-        }
-        maxUnique= set.size();
-        
-        for(int i =k;i<deque.size-1;i++){
-           
-           
-          if(maxUnique<0){
-            maxUnique = 0;
+          deque.add(temp);  
+          
+          if(deque.size()>k){
+              Object one = deque.removeFirst();
+             if (!deque.contains(one)){
+                  set.remove(one);  
+              }
+          }          
+          set.add(temp);                    
+          if(maxUnique<set.size()){
+              maxUnique=set.size();
           }
-        }        
+        }
+        System.out.println(maxUnique);                          
     }
 }
