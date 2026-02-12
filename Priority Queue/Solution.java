@@ -4,22 +4,35 @@ import java.util.*;
 public class Solution {
 
     public static void main(String[] args) {
-        List<Student> list=new ArrayList<>();
-        
-    }
+        PriorityQueue<Student> pq = new PriorityQueue<>();
+        Scanner scanner = new Scanner(System.in);
+        int count = Integer.parseInt(scanner.nextLine());
+        for(int i=0;i<count;i++){
+          String choice = scanner.next();
+          if(choice.equals("ENTER")){
+              String[] temp = scanner.nextLine().split(" ");
+              pq.add(new Student(temp[1],Double.parseDouble(temp[2]),Integer.parseInt((temp[3]))));
+          }
+          else{
+            pq.poll();
+          }
+        }
+        for(Student s:pq)
+          System.out.println(s.toString());        
+      }
 }
-class Student implements Comparable<Student> {
+class Student implements Comparable<Student>{
     private int id;
     private String name;
-    private double cgpa;
+    private Double cgpa;
 
-    public Student(int id, String name, double cgpa) {
+    public Student( String name, Double cgpa ,int id) {
         this.id = id;
         this.name = name;
         this.cgpa = cgpa;
     }
 
-    public int getID() {
+    public int getId() {
         return id;
     }
 
@@ -27,18 +40,27 @@ class Student implements Comparable<Student> {
         return name;
     }
 
-    public double getCGPA() {
+    public Double getCGPA() {
         return cgpa;
     }
     
     @Override
-    public int compareTo(Student other) {
-        if( !(this.getCGPA() == other.getCGPA()) ){        
-          if(this.getCGPA() < other.getCGPA()){
-              return 1;
-          }
-          return -1;
-        }        
+    public String toString(){
+      return this.getName() + " "+ this.getCGPA()  + " - - - " + this.getId() ;      
+    }
+        
+    @Override
+    public int compareTo(Student other) {    
+        if(!(Double.compare(this.getCGPA(), other.getCGPA()) == 0)){
+            return Double.compare(other.getCGPA(), this.getCGPA());
+        }
+        else if(!(this.getName().equals(other.getName()))){            
+            return this.getName().compareTo(other.getName());                       
+        }
+        else if(!(this.getId()==other.getId())){
+          return this.getId() - other.getId();
+        }
+        return 0;      
     }
 }
 
