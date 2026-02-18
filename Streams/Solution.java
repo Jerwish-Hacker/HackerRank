@@ -12,6 +12,9 @@ public class Solution{
       
       List<Integer> result = nums.stream()
           .distinct()
+          .filter(n-> n >10)
+          .sorted()
+          .limit(3)
           .collect(Collectors.toList());
           
       System.out.println(result);
