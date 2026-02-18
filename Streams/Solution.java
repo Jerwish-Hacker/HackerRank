@@ -9,11 +9,11 @@ public class Solution{
       //List<String> names = Arrays.asList("justin", "raj", "hcl");
       System.out.println(nums);
       
-      List<Integer> result = nums.stream()
-          .sorted()
-          .skip(3)
-          .collect(Collectors.toList());
-      System.out.println(result);
+      long count= nums.stream()
+          .filter(n-> n >10)
+          .count();
+          
+      System.out.println(count);
     }
 }
 // I know this following 
@@ -24,3 +24,4 @@ public class Solution{
 //distinct
 //limit
 //skip
+//count
