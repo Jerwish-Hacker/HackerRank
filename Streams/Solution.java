@@ -7,17 +7,15 @@ public class Solution{
       //List<Integer> nums = Arrays.asList(5, 2, 3, 5, 2, 10, 3, 20);
       //List<Integer> nums=Arrays.asList(5,2,3,77,85,15,35);
       //List<String> names = Arrays.asList("justin", "raj", "hcl");
-      List<Integer> nums = Arrays.asList(5, 2, 3, 77, 85, 15, 35, 2, 77);
-      System.out.println(nums);
+      Map<String,String> map=new HashMap<>();
       
-      List<Integer> result = nums.stream()
-          .distinct()
-          .filter(n-> n >10)
-          .sorted()
-          .limit(3)
-          .collect(Collectors.toList());
-          
-      System.out.println(result);
+      map.put("100","Raj");
+      map.put("101","Rahul");
+      map.put("102","Justin");
+      
+      map.values().stream()
+         .forEach(n -> System.out.println(n));
+      
     }
 }
 // I know this following 
