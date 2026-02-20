@@ -10,7 +10,7 @@ public class Solution{
       List<Integer> nums = Arrays.asList(11,2,3,4,5,6,7,8,9,10); 
       
       Optional<Integer> result = nums.stream()
-          .max(Comparator.naturalOrder());
+          .min(Comparator.naturalOrder());
           
       
       System.out.println(result.get());
