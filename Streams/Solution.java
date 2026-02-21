@@ -7,13 +7,13 @@ public class Solution{
       //List<Integer> nums = Arrays.asList(5, 2, 3, 5, 2, 10, 3, 20);
       //List<Integer> nums=Arrays.asList(5,2,3,77,85,15,35);
       //List<String> names = Arrays.asList("justin", "raj", "hcl");
-      List<Integer> nums = Arrays.asList(11,2,3,4,5,6,7,8,9,10); 
+      List<Integer> nums = Arrays.asList(11,2,3,4,5,6,7,8,9,10);
+      //List<Integer> nums = Arrays.asList(2, 4, 6, 8, 10);
       
-      Optional<Integer> result = nums.stream()
-          .min(Comparator.naturalOrder());
-          
+      Boolean result=nums.stream()
+                         .anyMatch(n-> n%2 == 0); 
       
-      System.out.println(result.get());
+      System.out.println(result);
     }
 }
 // I know this following 
@@ -25,3 +25,7 @@ public class Solution{
 //limit
 //skip
 //count
+//max
+//min
+//anyMatch
+//allMatch
