@@ -8,10 +8,11 @@ public class Solution{
       //List<Integer> nums=Arrays.asList(5,2,3,77,85,15,35);
       //List<String> names = Arrays.asList("justin", "raj", "hcl");
       //List<Integer> nums = Arrays.asList(11,2,3,4,5,6,7,8,9,10);            
-      List<Integer> nums = Arrays.asList(3, 7, 2, 9, 5);
+      List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
       
-      Integer result = nums.stream()                                    
-                            .reduce(0,(a, b) -> a > b ? a : b);                                    
+      List<String> result = names.stream()                                  
+                   .map(s -> s.toUpperCase())
+                   .collect(Collectors.toList());
       
       System.out.println(result);
     }
@@ -31,4 +32,6 @@ public class Solution{
 //anyMatch
 //allMatch
 //noneMatch
-//FindFirst
+//findFirst
+//findAny
+//reduce
