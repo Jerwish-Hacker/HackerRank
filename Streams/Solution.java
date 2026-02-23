@@ -4,18 +4,17 @@ import java.util.stream.Collectors;
 
 public class Solution{
     public static void main(String[] args){
-      List<Integer> nums = Arrays.asList(5, 2, 3, 5, 2, 10, 3, 20);
+      //List<Integer> nums = Arrays.asList(5, 2, 3, 5, 2, 10, 3, 20);
       //List<Integer> nums=Arrays.asList(5,2,3,77,85,15,35);
       //List<String> names = Arrays.asList("justin", "raj", "hcl");
-      //List<Integer> nums = Arrays.asList(11,2,3,4,5,6,7,8,9,10);
-      //List<Integer> nums = Arrays.asList(2, 4, 6, 8, 10);
-      //List<Integer> nums = Arrays.asList(1, 3, 5, 7, 9);
+      //List<Integer> nums = Arrays.asList(11,2,3,4,5,6,7,8,9,10);            
+      List<Integer> nums = Arrays.asList(5, 10, 15, 20, 25, 30);
       
-      Optional<Integer> result = nums.stream()
-                                    .filter(n-> n%2 ==0)
-                                    .findFirst();
+      Integer result = nums.stream()
+                                    .filter(n->n%2==0)
+                                    .reduce(0,(a,b) -> a+b);                                    
       
-      System.out.println(result.get());
+      System.out.println(result);
     }
 }
 
