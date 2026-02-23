@@ -8,11 +8,10 @@ public class Solution{
       //List<Integer> nums=Arrays.asList(5,2,3,77,85,15,35);
       //List<String> names = Arrays.asList("justin", "raj", "hcl");
       //List<Integer> nums = Arrays.asList(11,2,3,4,5,6,7,8,9,10);            
-      List<Integer> nums = Arrays.asList(5, 10, 15, 20, 25, 30);
+      List<Integer> nums = Arrays.asList(3, 7, 2, 9, 5);
       
-      Integer result = nums.stream()
-                                    .filter(n->n%2==0)
-                                    .reduce(0,(a,b) -> a+b);                                    
+      Integer result = nums.stream()                                    
+                            .reduce(0,(a, b) -> a > b ? a : b);                                    
       
       System.out.println(result);
     }
