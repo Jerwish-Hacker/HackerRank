@@ -8,12 +8,13 @@ public class Solution{
       //List<Integer> nums=Arrays.asList(5,2,3,77,85,15,35);
       //List<String> names = Arrays.asList("justin", "raj", "hcl");
       //List<Integer> nums = Arrays.asList(11,2,3,4,5,6,7,8,9,10);            
-      List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+      //List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+      List<Integer> nums = Arrays.asList(12, 5, 18, 7, 20, 3, 25);
       
-      List<String> result = names.stream()                                  
-                   .map(s -> s.toUpperCase())
-                   .collect(Collectors.toList());
-      
+      List<Integer> result=nums.stream()
+           .filter(n->n>10)
+           .sorted(Comparator.reverseOrder())
+           .collect(Collectors.toList());
       System.out.println(result);
     }
 }
