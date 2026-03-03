@@ -3,15 +3,14 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class Solution{
-    public static void main(String[] args){
+    public static void main(String[] args){          
       
-      List<String> names = Arrays.asList("Justin", "Raj", "Arun", "Kiran", "Ravi", "Jo");
+      List<Integer> nums = Arrays.asList(1, 2, 3, 4);
       
-      List<String> result=names.stream()
-            .filter(n->n.length()>3)
-            .map(s-> s.toUpperCase())
-            .sorted(Comparator.naturalOrder())
-            .collect(Collectors.toList());
+      Integer result = nums.stream()
+                            .map(n->n*n)
+                            .reduce(0,(a,b)-> a+b);
+      
       System.out.println(result);
     }
 }
