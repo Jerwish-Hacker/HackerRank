@@ -5,13 +5,12 @@ import java.util.stream.Collectors;
 public class Solution{
     public static void main(String[] args){          
       
-      List<Integer> nums = Arrays.asList(1, 2, 3, 4);
+      List<String> words = Arrays.asList("Java", "Stream", "API", "Programming");
       
-      Integer result = nums.stream()
-                            .map(n->n*n)
-                            .reduce(0,(a,b)-> a+b);
+      Optional<String> result = words.stream()                            
+                            .reduce((a, b) -> a.length() > b.length() ? a : b);
       
-      System.out.println(result);
+      System.out.println(result.get());
     }
 }
 
