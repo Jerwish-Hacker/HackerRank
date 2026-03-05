@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 public class Solution{
   public static void main(String[] args){
-    String s = "1234";
+    String s = "madam";
     char[] charArr = s.toCharArray(); 
     int left=0;
     int right = charArr.length-1;
@@ -16,6 +16,11 @@ public class Solution{
       left++;
       right--;
     }
-    System.out.println(charArr);
+    if(s.equals(new String(charArr))){
+      System.out.println("Palindrome");
+    }
+    else{
+      System.out.println("Not Palindrome");
+    }
   }
 }
