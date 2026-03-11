@@ -13,6 +13,8 @@ public class  Solution{
       left++;
       right--;
     }    
-    System.out.println(s.equals(new String(cArr)));    
+    System.out.println(s.equals(cArr));
+    System.out.println(s);
+    System.out.println(cArr);
   }
 }
