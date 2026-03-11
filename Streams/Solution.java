@@ -5,11 +5,10 @@ import java.util.stream.Collectors;
 public class Solution{
     public static void main(String[] args){          
       
-      List<String> words = Arrays.asList("Java", "Code", "Stream");
+      List<Integer> nums = Arrays.asList(5, 3, 9, 2, 8);
       
-      Optional<Integer> result = words.stream()
-                            .map(s->s.length())
-                            .reduce((a, b) -> a+b);
+      Optional<Integer> result=nums.stream()
+                         .reduce((a,b)-> a - b); 
       
       System.out.println(result.get());
     }
