@@ -5,12 +5,14 @@ import java.util.stream.Collectors;
 public class Solution{
     public static void main(String[] args){          
       
-      List<Integer> nums = Arrays.asList(5, 3, 9, 2, 8);
+      List<Integer> nums = Arrays.asList(55, 13, 19, 22, 18);
       
-      Optional<Integer> result=nums.stream()
-                         .reduce((a,b)-> a - b); 
+      List<String> result = nums.stream()
+                                 .map(n-> String.valueOf(n))
+                                 .filter(s -> s.startsWith("1"))
+                                 .collect(Collectors.toList());
       
-      System.out.println(result.get());
+      System.out.println(result);
     }
 }
 
