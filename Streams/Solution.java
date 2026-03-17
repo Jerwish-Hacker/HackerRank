@@ -15,7 +15,6 @@ public class Solution{
       System.out.println(result);
     }
 }
-
 // I know this following 
 //filter
 //map
