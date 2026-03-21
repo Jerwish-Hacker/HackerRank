@@ -1,20 +1,22 @@
-import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.lang.*;
 
-public class Solution{
-    public static void main(String[] args){          
-      
-      List<Integer> nums = Arrays.asList(55, 13, 19, 22, 18);
-      
-      List<String> result = nums.stream()
-                                 .map(n-> String.valueOf(n))
-                                 .filter(s -> s.startsWith("1"))
-                                 .collect(Collectors.toList());
-      
-      System.out.println(result);
-    }
+class Solution{
+  public static void main(String[] args){
+    Map<String,Integer> map = new HashMap<>();
+    map.put("Tamil",99);
+    map.put("English",65);
+    map.put("Maths",35);
+        
+    Map<String,Integer> result = map.entrySet()
+       .stream()
+       .filter(e -> e.getValue() > 90)
+       .collect(Collectors.toMap());
+  }
 }
+
+
 // I know this following 
 //filter
 //map
