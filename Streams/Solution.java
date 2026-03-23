@@ -4,15 +4,16 @@ import java.lang.*;
 
 class Solution{
   public static void main(String[] args){
-    Map<String,Integer> map = new HashMap<>();
-    map.put("Tamil",99);
-    map.put("English",65);
-    map.put("Maths",35);
-        
-    Map<String,Integer> result = map.entrySet()
-       .stream()
-       .filter(e -> e.getValue() > 90)
-       .collect(Collectors.toMap());
+   
+   String[] sArr = {"9677548836A","9876543210L"};
+   
+   List<String> list =  Arrays.asList(sArr);
+   
+   Map<String,String> map=list.stream()
+                               .collect(Collectors.toMap(e->e.substring(0,e.length()-1),e->e.substring(e.length()-1)));
+  
+    map.entrySet()
+       .forEach(System.out::println);
   }
 }
 
