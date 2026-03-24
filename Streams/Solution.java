@@ -1,19 +1,17 @@
 import java.util.*;
 import java.util.stream.Collectors;
 import java.lang.*;
+import java.io.*;
+
 
 class Solution{
   public static void main(String[] args){
-   
-   String[] sArr = {"9677548836A","9876543210L"};
-   
-   List<String> list =  Arrays.asList(sArr);
-   
-   Map<String,String> map=list.stream()
-                               .collect(Collectors.toMap(e->e.substring(0,e.length()-1),e->e.substring(e.length()-1)));
-  
-    map.entrySet()
-       .forEach(System.out::println);
+       try(BufferedReader br = new BufferedReader(new FileReader("data.txt"))){
+           
+       }
+       catch(IOException e){       
+            e.printStackTrace();
+       }  
   }
 }
 
